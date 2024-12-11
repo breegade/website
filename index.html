@@ -36,6 +36,11 @@
       filter: drop-shadow(0 0 20px #00ff00);
     }
 
+    a[href^="mailto:"] {
+    text-decoration: none; /* Retirer le soulignement */
+    color: inherit;        /* Garder la couleur par défaut du texte */
+}
+
     .crt::after {
       content: '';
       position: absolute;
@@ -116,7 +121,7 @@
     </div>
   </div>
   <footer>
-    bonjour@labrigadechor.us
+    <p><a href="mailto:bonjour@labrigadechor.us">bonjour@labriagdechor.us</a></p>
   </footer>
 </body>
 </html>
