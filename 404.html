@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA BRIGADE CHORUS</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+
+    .crt {
+      position: relative;
+      width: 400px;
+      height: 200px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 3px solid #00ff00;
+      overflow: hidden;
+      filter: drop-shadow(0 0 10px #00ff00);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: flicker 0.3s infinite alternate;
+    }
+
+    .crt::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.1),
+        rgba(0, 255, 0, 0.1) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    .message {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .link {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #00ff00;
+      text-decoration: none;
+      transition: text-shadow 0.3s ease;
+    }
+
+    .link:hover {
+      text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.9; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="crt">
+    <a href="index.html" class="link">home page</a>
+  </div>
+</body>
+</html>
